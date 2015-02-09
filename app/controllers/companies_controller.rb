@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_action :set_company, only: [:show, :edit, :update, :destroy]
+
   def index
     @companies = Company.all
   end
@@ -20,7 +22,16 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def destroy
+    @company.destroy
+      redirect_to companies_url, notice: 'Project was successfully deleted.'
+  end
+
   private
+  def set_company
+    @company = Company.find(params[:id])
+  end
+
   def company_params
      params.require(:company).permit(:name, :suffix, :catch_phrase, :email, :start_date, :industry)
   end
