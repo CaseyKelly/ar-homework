@@ -77,7 +77,7 @@ set a variable called companies = to all the Companies.
 
 
 15. select review with id of 10 and return the product it belongs to.
-  
+  Review.find(10).product
 
 
 

@@ -1,0 +1,23 @@
+<%= form_for @company do |f| %>
+
+<p><%= f.label :name %>
+<%= f.text_field :name %>
+
+<p><%= f.label :suffix %>
+<%= f.text_field :suffix %>
+
+<p><%= f.label :catch_phrase %>
+<%= f.text_field :catch_phrase %>
+
+<p><%= f.label :email %>
+<%= f.text_field :email %>
+
+<p><%= f.label :start_date %>
+<%= f.date_field :start_date %>
+
+<p><%= f.label :industry %>
+<%= f.text_field :industry %>
+
+<p><%= f.submit %>
+
+<% end %>

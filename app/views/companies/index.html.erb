@@ -1,0 +1,27 @@
+<p>
+  <%= link_to "Create Company", new_company_path %>
+</p>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Suffix</th>
+    <th>Catchphrase</th>
+    <th>Email</th>
+    <th>Start Date</th>
+    <th>Industry</th>
+  </tr>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= link_to company.name, company %></td>
+        <td><%= company.suffix %></td>
+        <td><%= company.catch_phrase %></td>
+        <td><%= company.email %></td>
+        <td><%= company.start_date %></td>
+        <td><%= company.industry %></td>
+      </tr>
+      <% end %>
+      </tbody>
+</table>
