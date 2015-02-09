@@ -46,7 +46,7 @@
   <tbody>
     <% @company.products.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
+        <td><%= link_to product.name, product %></td>
         <td><%= product.department %></td>
         <td><%= product.price %></td>
       </tr>

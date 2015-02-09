@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
 
   resources :locations
+  resources :products
+  resources :reviews
 
 root 'companies#index'
 
