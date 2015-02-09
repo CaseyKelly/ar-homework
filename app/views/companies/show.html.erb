@@ -28,5 +28,32 @@
   <%= @company.industry %>
 </p>
 
+<br><br>
+<b><u><%= @company.name %>'s Locations</b></u>
+  <%= link_to "Create a New Location", new_company_location_path(@company) %>
+<p></p>
+<table border="1">
+  <tr>
+    <th>City</th>
+    <th>Street Name</th>
+    <th>State</th>
+    <th>Zip Code</th>
+    <th>Country</th>
+    <th>Company ID</th>
+  </tr>
+
+  <tbody>
+    <% @company.locations.each do |location| %>
+      <tr>
+        <td><%= location.city %></td>
+        <td><%= location.street_name %></td>
+        <td><%= location.state %></td>
+        <td><%= location.zip_code %></td>
+        <td><%= location.country %></td>
+        <td><%= location.company_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <p>
 <%= link_to 'Back', companies_path %>

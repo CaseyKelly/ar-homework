@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       end
     end
 
+  resources :locations
+
 root 'companies#index'
 
 end
