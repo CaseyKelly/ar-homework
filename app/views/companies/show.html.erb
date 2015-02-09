@@ -28,6 +28,32 @@
   <%= @company.industry %>
 </p>
 
+<p>
+  <%= link_to 'Back to Companies', companies_path %>
+</p>
+
+<br><br>
+<b><%= @company.name %>'s Products</b>
+  <%= link_to "Create a New Product", new_company_product_path(@company) %>
+<p></p>
+<table border="1">
+  <tr>
+    <th>Product Name</th>
+    <th>Department</th>
+    <th>Price</th>
+  </tr>
+
+  <tbody>
+    <% @company.products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.department %></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <br><br>
 <b><%= @company.name %>'s Locations</b>
   <%= link_to "Create a New Location", new_company_location_path(@company) %>
@@ -53,5 +79,3 @@
     <% end %>
   </tbody>
 </table>
-<p>
-<%= link_to 'Back', companies_path %>
